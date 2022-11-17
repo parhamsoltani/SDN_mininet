@@ -40,6 +40,6 @@ def topology():
     net.build()
     net.start()
     CLI(net)
-    net.srop()
+    net.stop()
 
 topology()
