@@ -1,5 +1,5 @@
 from mininet.net import Mininet
-from mininet.node import RemoteController,OVSKernelSwitch
+from mininet.node import RemoteController,OVSKernelSwitch,DefaultController
 from mininet.cli import CLI
 from mininet.log import setLogLevel
 from mininet.link import TCLink
@@ -26,24 +26,25 @@ def topology():
 	defaultRoute="via 10.0.2.1"
         )
 
-    #adding s1 and s2 switches
+    #adding s1 and s2 switches and r1 router
     s1=net.addSwitch(
         name="s1"
         )
     s2=net.addSwitch(
         name="s2"
         )
+    r1=net.addSwitch(
+	name="r1"
+        )
 
-    #adding a link between h1 and s1
     net.addLink(h1,s1)
-    #adding a link between switches
-    net.addLink(s1,s2)
-    #adding a link between h2 and s2
-    net.addLink(h2,s2)
+    net.addLink(s1,r1)
+    net.addLink(r1,s2)
+    net.addLink(s2,h2)
 
     net.build()
     net.start()
     CLI(net)
-    net.srop()
+    net.stop()
 
 topology()
