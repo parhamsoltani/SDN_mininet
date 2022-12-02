@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+    <flow xmlns="urn:opendaylight:flow:inventory">
+    	<strict>false</strict>
+    	<instructions>
+            <instruction>
+            	<order>0</order>
+            	<apply-actions>
+                    <action>
+                        <order>0</order>
+			<output-action>
+		            <output-node-connector>1</output-node-connector>
+		  	</output-action>
+		    </action>
+            	</apply-actions>
+            </instruction>
+    	</instructions>
+    	<table_id>0</table_id>
+    	<id>2</id>
+    	<match>
+            <ethernet-match>
+            	<ethernet-type>
+                    <type>2048</type>
+            	</ethernet-type>
+            </ethernet-match>
+	    <arp-source-transport-address>10.0.2.1/32</arp-source-transport-address>
+	    <arp-target-transport-address>10.0.1.1/32</arp-target-transport-address>
+    	</match>
+    </flow>

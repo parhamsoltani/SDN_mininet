@@ -1,0 +1,21 @@
+<flow xmlns="urn:opendaylight:flow:inventory">
+    <strict>false</strict>
+    <instructions>
+        <instruction>
+            <order>0</order>
+            <apply-actions>
+                <action>
+                    <order>0</order>
+                    <output-action>
+                        <output-node-connector>2</output-node-connector>
+                    </output-action>
+                </action>
+            </apply-actions>
+        </instruction>
+    </instructions>
+    <table_id>0</tabel_id>
+    <id>1</id>
+    <match>
+        <in-port>1</in-port>
+    </match>
+</flow>
